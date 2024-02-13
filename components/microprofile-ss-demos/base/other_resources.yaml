@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    description: The JGroups ping port for clustering.
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+  creationTimestamp: null
+  name: microprofile-ping
+spec:
+  clusterIP: None
+  ports:
+  - name: ping
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
+  publishNotReadyAddresses: true
+  selector:
+    app.kubernetes.io/name: microprofile-wildfly
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
