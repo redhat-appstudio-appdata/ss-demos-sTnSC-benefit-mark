@@ -35,7 +35,7 @@ spec:
           value: microprofile-ping
         - name: ENV_FILES
           value: /etc/extensions/*
-        image: java-useless-image:latest
+        image: quay.io/redhat-user-workloads/jdenise-tenant/ss-demos/microprofile-ss-demos@sha256:9f93a525e4fcf5731045693dde7b6ad93bfa7459e23277d3f9b5c802a2ae6665
         livenessProbe:
           failureThreshold: 5
           httpGet:
